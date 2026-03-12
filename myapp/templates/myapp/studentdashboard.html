@@ -1,0 +1,29 @@
+{% extends 'myapp/dashbase.html' %}
+{% load static %}
+
+{% block title %}Student Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'myapp/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Welcome, {{ student.full_name }}</h2>
+
+    <div class="info">
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Mobile:</strong> {{ student.mobile_number }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'course_signup_view' %}" class="btn">Course Signup</a>
+        <a href="{% url 'profile_edit_view' %}" class="btn">Edit Profile</a>
+        <a href="{% url 'password_change' %}" class="btn">Change Password</a>
+        <a href="{% url 'logout_view' %}" class="btn btn-logout">Logout</a>
+        <a href="{% url 'home' %}" class="back-home-button">← Back to Home</a>
+    </div>
+</div>
+
+{% endblock %}

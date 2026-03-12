@@ -1,0 +1,20 @@
+ footer {
+      text-align: center;
+      background-color: rgb(39, 108, 146);
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer_line {
+      margin-top: 10px;
+    }

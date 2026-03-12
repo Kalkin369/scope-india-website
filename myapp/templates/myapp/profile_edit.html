@@ -1,0 +1,18 @@
+{% extends 'myapp/dashbase.html' %}
+{% load static %}
+
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'myapp/profiledit.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>Edit Profile</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+     <a href="{% url 'dashboard_view' %}" class="back-to-dashboard">Go to Dashboard</a>
+  </form>
+   
+</div>
+{% endblock %}

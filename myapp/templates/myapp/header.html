@@ -1,0 +1,27 @@
+{% load static %}
+    <nav id="header" >
+    <div class="nav-container">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="headerlogo">
+        <img id="logo" src="{% static 'myapp/scope-india-logo-bird.png' %}" alt="Scope India Logo">
+      </div>
+      <div class="headerlinks" id="navLinks">
+        <ul>
+          <li><a href="{% url 'registration' %}">Registration</a></li>
+          <li><a href="{% url 'login_view' %}">Login</a></li>
+          <li><a href="{% url 'home' %}">Home page</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li><a href="{% url 'courses' %}">Courses</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+

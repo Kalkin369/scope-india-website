@@ -1,0 +1,43 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block title %}{{ course.name }} | SCOPE INDIA{% endblock %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'myapp/course_detail.css' %}">
+{% endblock %}
+{% block content %}
+
+<main class="course-detail-container">
+  <h1>{{ course.name }}</h1>
+
+  <p><strong></strong> {{ course.category }}</p>
+  <p><strong>Description:</strong> {{ course.description }}</p>
+  {% if course.duration %}
+    <p><strong>Duration:</strong> {{ course.duration }}</p>
+  {% endif %}
+  {% if course.fees %}
+    <p><strong>Fees:</strong> ₹{{ course.fees }}</p>
+  {% endif %}
+
+  <a href="{% url 'registration' %}" class="enroll-btn">Enroll Now</a>
+
+  <table class="syllabus-table">
+    <tr>
+      <th>Module</th>
+      <th>Topics Covered</th>
+    </tr>
+    <tr>
+      <td>Module 1</td>
+      <td>Introduction to {{ course.name }}, Basics of Tools</td>
+    </tr>
+    <tr>
+      <td>Module 2</td>
+      <td>Advanced Concepts, Real-time Projects</td>
+    </tr>
+    <tr>
+      <td>Module 3</td>
+      <td>Live Project, Interview Prep</td>
+    </tr>
+  </table>
+</main>
+{% endblock %}

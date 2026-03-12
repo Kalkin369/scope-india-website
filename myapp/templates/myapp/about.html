@@ -1,0 +1,80 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}About| SCOPE INDIA{% endblock   %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'myapp/about.css' %}">
+{% endblock %}
+{% block content %}
+ 
+    <section id="container_page_intro">
+    <div >
+      <h2>"At SCOPE India, we've been dedicated to shaping skilled futures and achieving career goals for the past 18 years."</h2>
+      <h2>Know About SCOPE INDIA</h2>
+      <h3>Centre for Software, Networking, & Cloud Education</h3>
+    </div>
+  </section>
+    <div class="secondblock">
+      <h1>SCOPE INDIA, your career partner!</h1>
+      <h2>One of India's best Training destinations for Software, Networking, and Cloud Computing courses with 18 years of Industrial experience.</h2>
+      <p>Software, Networking, and Cloud Professional Education Centre in Kerala and Tamil Nadu from Suffix E Solutions with WORKING PROFESSIONALS oriented on-the-job TRAINING model.
+        SCOPE INDIA provides courses for Software Programming in Python (Data Science | Artificial Intelligence | Machine Learning | Deep Learning. Data Analytics), Java, PHP, Net, MERN, Software Testing Manual and Automation, Cloud Computing (AWS | Azure), Server Administration (MicroSoft MCSE | Linux RHCE), Networking (CCNA), DevOps, Mobile App Development in Flutter, and Digital Marketing. A Training with a 100% Trusted Job-Based Internship Model.
+        SCOPE INDIA has a Strong Placement Cell that provides jobs to thousands of students annually. We assure you, you won't regret it after training from SCOPE INDIA.</p>
+      <br>
+      <p>This is how SCOPE INDIA can support both newbies and those experienced in the industry to upgrade their skills.</p>
+    </div>
+
+    <div class="icon_image">
+      <a href="scope-india-reviews.html">
+        <img src="{% static 'myapp/Star.png' %}" alt="google 5 star">
+      </a>
+      <h4>Google 4.9 * Rated Institute</h4>
+    </div>
+    
+
+    <section id="section_mission_vision">
+      <div class="container">
+        <h2>Our Mission & Vision</h2>
+        <div class="mission_vision_block">
+          <div class="box">
+            <div class="icon">
+              <svg width="40" height="40" fill="none" stroke="black" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p><strong>SCOPE INDIA</strong> wants to bridge the gap between education and jobs by providing hands-on, job-ready IT training taught by real professionals. Our goal is to help people build confident and successful careers.</p>
+            <ul>
+              <li>✓ Industry-aligned curriculum</li>
+              <li>✓ Practical skill development</li>
+              <li>✓ Career-focused training</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="icon">
+              <svg width="40" height="40" fill="none" stroke="black" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 
+                        0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 
+                        3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 
+                        0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 
+                        0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 
+                        2 0 014 0z" />
+              </svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>We want to be a top training provider in India and worldwide. We focus on innovation, honesty, and strong connections with the IT industry. We aim to grow globally.</p>
+            <ul>
+              <li>✓ Global recognition</li>
+              <li>✓ Innovation leadership</li>
+              <li>✓ Technology excellence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}  
+
+    
+

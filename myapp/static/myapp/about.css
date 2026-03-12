@@ -1,0 +1,165 @@
+/* General Reset & Responsive Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Page Intro */
+section#container_page_intro {
+  padding: 20px;
+  background: rgb(18, 18, 74);
+  text-align: center;
+  border: 2px solid #ffc107;
+}
+
+section#container_page_intro h2,
+section#container_page_intro h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Mission/Vision Section */
+#section_mission_vision {
+  max-width: 1000px;
+  width: 95%;
+  margin: 40px auto;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+#section_mission_vision h2 {
+  text-align: center;
+  color: #e7e30d;
+  margin-bottom: 30px;
+}
+
+.mission_vision_block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.box {
+  flex: 1 1 45%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  border: 4px solid #ffc107;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  margin-bottom: 10px;
+}
+
+.box h3 {
+  color:yellow;
+  margin-bottom: 10px;
+}
+
+.box p,
+.box ul {
+  margin-bottom: 10px;
+  color:aliceblue
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box ul li {
+  margin-bottom: 5px;
+}
+
+/* Second Block */
+.secondblock,
+.icon_image {
+  width: 95%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.secondblock h1,
+.secondblock h2 {
+  margin-bottom: 10px;
+  color: #e9cb0e;
+}
+
+.secondblock p {
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* Icon Image Section */
+.icon_image {
+  text-align: center;
+  border: 3px solid rgb(3, 3, 55);
+}
+
+.icon_image img {
+  width: 100px;
+  border: 2px solid gold;
+  border-radius: 3px;
+}
+
+.icon_image h4 {
+  margin-top: 10px;
+  color: white;
+}
+
+/* ============ Media Queries ============ */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .mission_vision_block {
+    flex-direction: column;
+  }
+
+  .box {
+    flex: 1 1 100%;
+  }
+
+  section#container_page_intro h2 {
+    font-size: 20px;
+  }
+
+  .secondblock h1 {
+    font-size: 22px;
+  }
+
+  .secondblock h2 {
+    font-size: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .icon_image img {
+    width: 80px;
+  }
+
+  .secondblock,
+  .icon_image {
+    padding: 15px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+
+  section#container_page_intro h2 {
+    font-size: 18px;
+  }
+
+  section#container_page_intro h3 {
+    font-size: 16px;
+}
+}

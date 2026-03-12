@@ -1,0 +1,14 @@
+{% load static %}
+
+{% block title %}Reg Success{% endblock %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'myapp/registrationsuccess.css' %}">
+{% endblock %}
+{% block content %}
+  <section class="registration-success">
+    <h2>Registration Successful</h2>
+    <p>Thank you for registering with SCOPE INDIA!</p>
+    <p>A confirmation email has been sent to your email address. Please check your inbox to verify your registration.</p>
+    <a href="{% url 'home' %}">Go to Home</a>
+  </section>
+{% endblock %}

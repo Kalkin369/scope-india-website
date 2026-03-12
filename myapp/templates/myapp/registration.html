@@ -1,0 +1,167 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Registration| SCOPE INDIA{% endblock   %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'myapp/registration1.css' %}">
+{% endblock %}
+{% block content %}
+    
+      <section id="container_page_intro">
+        <div>
+            <h1>Course Registration at SCOPE&nbsp;INDIA</h1>
+            <h2>Center for Software, Networking, & Cloud Education</h2>
+            <h3>One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</h3>
+        </div>
+    </section>
+    <div style="clear:both;"></div>
+		<form method="POST" action="{% url 'registration_view' %}" >
+			{% csrf_token%}
+			
+		<section id="registration_head_container">
+			<div>
+				<label class="block_element" for="reg_full_name">Full Name (required)</label>
+				<input class="block_element" type="text"  id="reg_full_name" name="full_name" value="{{ full_name}}" minlength="3" maxlength="40" placeholder="" required />
+			</div>
+			<div>
+				<label class="block_element" for="reg_date_of_birth">Date of Birth (required)</label>
+                <input class="block_element" type="date" id="reg_date_of_birth" name="date_of_birth" value="{{ date_of_birth}}" placeholder="dd/mm/yyyy" required />
+			</div>
+			<div>
+				<label class="block_element">Gender (required)</label>
+				<label for="reg_gender1"><input type="radio" id="reg_gender1" name="gender" value="Male" required /> Male</label>
+				<label for="reg_gender2"><input type="radio" id="reg_gender2" name="gender" value="Female" required /> Female</label>
+				<label for="reg_gender3"><input type="radio" id="reg_gender3" name="gender" value="Other" required /> Other</label>
+			</div>
+			<div>
+				<label class="block_element" for="reg_qualification">Educational Qualification</label>
+                <input class="block_element" type="text" id="reg_qualification" name="qualification" value="{{qualification}}" minlength="2" maxlength="40" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_mobile_number">Mobile Number (required)</label>
+                <input class="block_element" type="tel" id="reg_mobile_number" name="mobile_number" value="{{mobile_number}}" minlength="10" maxlength="15" placeholder="" required />
+			</div>
+			<div>
+				<label class="block_element" for="reg_email">Email (required)</label>
+            	<input class="block_element" type="email" id="reg_email" name="email" value="{{ email}}" minlength="10" maxlength="50" placeholder="" required />
+			</div>
+			<div>
+				<label class="block_element" for="reg_guardian_name">Guardian's Name</label>
+				<input class="block_element" type="text" id="reg_guardian_name" name="guardian_name" value="{{guardian_name}}" minlength="3" maxlength="40" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_guardian_occupation">Guardian's Occupation</label>
+				<input class="block_element" type="text" id="reg_guardian_occupation" name="guardian_occupation" value="{{guardian_occupation}}" minlength="4" maxlength="40" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_guardians_mobile">Guardian's Mobile</label>
+				<input class="block_element" type="tel" id="reg_guardians_mobile" minlength="10" maxlength="15" name="guardians_mobile" value="{{guardians_mobile}}" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_course">Choose your course (required)</label>
+				 <select name="course"   id="reg_course"  title="Select preferred courses from the list" required>
+                 <option value="">Choose your course!</option>
+                  <optgroup label="Software Programming Courses">
+                   <option value="PHP Full Stack" >PHP Full Stack</option>
+                   <option value="PYTHON Full Stack" >PYTHON Full Stack</option>
+                   <option value="JAVA Full Stack" >JAVA Full Stack</option>
+                   <option value="C#.NET Core 7 Full Stack" >C#.NET Core 7 Full Stack</option>
+                   <option value="MEAN Full Stack">MEAN Full Stack</option>
+                   <option value="MERN Full Stack" >MERN Full Stack</option>
+                   <option value="Data Science & AI (Python Guru)">Data Science & AI (Python Guru)</option>
+                   <option value="Python Mastery (Python/Django/MySQL)">Python Mastery (Python/Django/MySQL)</option>
+                   <option value="Google Flutter Mobile App Development (iOS/Android)">Google Flutter Mobile App Development (iOS/Android)</option>
+                   <option value="UI/UX Designing" >UI/UX Designing</option>
+                  </optgroup>
+                  <optgroup label="SEO/SEM/SMM/ Courses">
+                   <option value="Digital Marketing Master Program" >Digital Marketing Master Program</option>
+                  </optgroup>
+                  <optgroup label="Software Testing Courses">
+                   <option value="Software Testing Advanced (Manual/Automation)">Software Testing Advanced (Manual/Automation)</option>
+                   <option value="Software Testing Manual (ISTQB)" >Software Testing Manual (ISTQB)</option>
+                   <option value="ISTQB Certification (EXAM Reg.)" >ISTQB Certification (EXAM Reg.)</option>
+                   <option value="Selenium TestNG & Cucumber/Appium Mobile/QTP/Loadrunner/Jmeter/Jira" >Selenium TestNG & Cucumber/Appium Mobile/QTP/Loadrunner/Jmeter/Jira</option>
+                  </optgroup>
+                  <optgroup label="Computer Networking & Server Courses">
+                   <option value="Computer Networking (CCNA)" >Computer Networking (CCNA)</option>
+                   <option value="Server Admin (MCSE)" >Server Admin (MCSE)</option>
+                   <option value="Server Admin (RHCE)" >Server Admin (RHCE)</option>
+                   <option value="Networking & Server Admin (CCNA/MCSE/Hardware)" >Networking & Server Admin (CCNA/MCSE/Hardware)</option>
+                   <option value="Networking & Server Admin (CCNA/RHCE/Hardware)">Networking & Server Admin (CCNA/RHCE/Hardware)</option>
+                   <option value="Networking & Server Admin (CCNA/MCSE/RHCE/Hardware)">Networking & Server Admin (CCNA/MCSE/RHCE/Hardware)</option>
+                   <option value="Security Surveillance & Networking Internship (CCNA/CCTV/Hardware)">Security Surveillance & Networking Internship (CCNA/CCTV/Hardware)</option>
+                  </optgroup>
+                  <optgroup label="Cloud Computing Courses">
+                   <option value="Cloud Admin (AWS/MS AZURE)" >Cloud Admin (AWS/MS AZURE)</option>
+                   <option value="Cloud & Networking Admin (CCNA/AWS/Hardware)">Cloud & Networking Admin (CCNA/AWS/Hardware)</option>
+                   <option value="Cloud & Networking Admin (CCNA/MS Azure/Hardware)" >Cloud & Networking Admin (CCNA/MS Azure/Hardware)</option>
+                   <option value="Cloud & Networking Admin (CCNA/AWS)">Cloud & Networking Admin (CCNA/AWS)</option>
+                   <option value="Cloud & Networking Admin (CCNA/MS Azure)" >Cloud & Networking Admin (CCNA/MS Azure)</option>
+                   <option value="Cloud & Server Admin (MCSE/AWS/Hardware)" >Cloud & Server Admin (MCSE/AWS/Hardware)</option>
+                   <option value="Cloud & Server Admin (MCSE/MS Azure/Hardware)" >Cloud & Server Admin (MCSE/MS Azure/Hardware)</option>
+                   <option value="Cloud & Server Admin (RHCE/AWS/Hardware)" >Cloud & Server Admin (RHCE/AWS/Hardware)</option>
+                   <option value="Cloud & Server Admin (RHCE/MS Azure/Hardware)">Cloud & Server Admin (RHCE/MS Azure/Hardware)</option>
+                   <option value="Cloud, Networking, & Server Admin (CCNA/AWS/AZURE/MCSE/RHCE/Hardware)">Cloud, Networking, & Server Admin (CCNA/AWS/AZURE/MCSE/RHCE/Hardware)</option>
+                   <option value="DevOps Mastery (All together)">DevOps Mastery (All together)</option>
+                   <option value="DevOps - Selective" >DevOps - Selective</option>
+                  </optgroup>
+                  <optgroup label="Others">
+                   <option value="Academic Project">Academic Project</option>
+                   <option value="MS Office (Word/Excel/Power Point/Outlook)" >MS Office (Word/Excel/Power Point/Outlook)</option>
+                   <option value="Data Analytics" >Data Analytics</option>
+                   <option value="Advanced MS Excel" >Advanced MS Excel</option>
+                   <option value="Graphic Designing (Photoshop)">Graphic Designing (Photoshop)</option>
+                   <option value="Graphic Designing (Photoshop/Illustrator)">Graphic Designing (Photoshop/Illustrator)</option>
+                   <option value="None of the above, will discuss directly">None of the above, will discuss directly</option>
+                  </optgroup>
+                 </select>
+ 
+					
+			</div>
+			<div>
+				<label class="block_element">Training Mode (required)</label>
+				<label for="reg_training_mode1"><input type="radio" id="reg_training_mode1" name="training_mode" value="Online" required /> Live online</label>
+				<label for="reg_training_mode2"><input type="radio" id="reg_training_mode2"  name="training_mode" value="Offline" required /> Classroom</label>
+			</div>
+			<div>
+				<label class="block_element">SCOPE INDIA Location (required)</label>
+				<label for="reg_training_location5"><input type="radio" id="reg_training_location5" name="training_location" value="Technopark TVM" required />&nbsp;Technopark&nbsp;TVM</label>
+				<label for="reg_training_location1"><input type="radio" id="reg_training_location1" name="training_location" value="Thampanoor TVM" required />&nbsp;Thampanoor&nbsp;TVM</label><br />
+				<label for="reg_training_location2"><input type="radio" id="reg_training_location2" name="training_location" value="Kochi" required />&nbsp;Kochi</label>
+                <label for="reg_training_location3"><input type="radio" id="reg_training_location3" name="training_location" value="Nagercoil" required />&nbsp;Nagercoil</label>
+                <label for="reg_training_location4"><input type="radio" id="reg_training_location4" name="training_location" value="Online" required />&nbsp;Online</label>
+			</div>
+			<div>
+              <label class="block_element" for="reg_preferred_timings">Preferred Training Timings (required)</label>
+              <select name="preferred_timings" id="reg_preferred_timings" required>
+               <option value="">-- Select Timing --</option>
+               <option value="Between 8am - 10am">Between 8am - 10am</option>
+               <option value="Between 9am - 1pm">Between 9am - 1pm</option>
+               <option value="Between 1pm - 6pm">Between 1pm - 6pm</option>
+               <option value="Between 6pm - 10pm">Between 6pm - 10pm</option>
+              </select>
+            </div>
+			<div>
+				<label class="block_element" for="reg_address">Address</label>
+				<input class="block_element" type="text" id="reg_address" name="address" value="{{address}}" minlength="8" maxlength="150" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_country">Country</label>
+                <input class="block_element" type="text" id="reg_country" name="country" value="{{country}}" minlength="3" maxlength="60" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_state">State</label>
+				<input class="block_element" type="text" id="reg_state" name="state" value="{{state}}" minlength="3" maxlength="60" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_city">City</label>
+				<input class="block_element" type="text" id="reg_city" name="city" value="{{city}}" minlength="3" maxlength="60" placeholder="" />
+			</div>
+			<div>
+				<label class="block_element" for="reg_zip">PIN/Zip Code</label>
+				<input class="block_element" type="text" id="reg_zip" name="zip_code" value="{{zip_code}}"minlength="3" maxlength="10" placeholder="" >
+			</div>
+			<div class="submit_form">
+				<button type="submit" id="call_back_visitor_click">Complete Registration >> </button>
+			</div> 
+		</div>	
+{% endblock %} 

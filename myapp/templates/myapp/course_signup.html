@@ -1,0 +1,21 @@
+{% extends 'myapp/dashbase.html' %}
+{% load static %}
+
+
+
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'myapp/course_signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Course Signup</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="{% url 'dashboard_view' %}" class="back-to-dashboard">Go to Dashboard</a>
+    </form>
+    
+</div>
+{% endblock %}

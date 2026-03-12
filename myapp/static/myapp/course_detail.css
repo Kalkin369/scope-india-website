@@ -1,0 +1,107 @@
+
+
+.course-detail-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-detail-container h1 {
+  font-size: 2.5rem;
+  color: #f6f8f9;
+  margin-bottom: 20px;
+}
+
+.course-detail-container p {
+  font-size: 1.1rem;
+  color: #fefafa;
+  margin-bottom: 12px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.enroll-btn:hover {
+  background-color: #0056b3;
+}
+
+.syllabus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.syllabus-table th,
+.syllabus-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  color:#fefafa;
+}
+
+.syllabus-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+   color:#120f0f;
+}
+@media (max-width: 768px) {
+  .course-detail-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .course-detail-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .course-detail-container p {
+    font-size: 1rem;
+  }
+
+  .syllabus-table th,
+  .syllabus-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .enroll-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-detail-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .course-detail-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .syllabus-table {
+    font-size: 0.85rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .enroll-btn {
+    font-size: 0.95rem;
+    padding: 10px 15px;
+}
+}

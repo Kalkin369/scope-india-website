@@ -1,0 +1,390 @@
+  
+ .background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #f0f0f0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  animation-fill-mode: forwards;
+}
+
+.left {
+  left: 0;
+  animation: moveLeftBall 2s forwards;
+}
+
+.right {
+  right: 0;
+  animation: moveRightBall 2s forwards;
+}
+
+@keyframes moveLeftBall {
+  to {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes moveRightBall {
+  to {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+/* Hide balls after animation */
+.left,
+.right {
+  animation-delay: 0s;
+}
+
+.left::after,
+.right::after {
+  content: "";
+  animation: hideBall 0s 2s forwards; /* Hide after 2 seconds */
+  position: absolute;
+}
+
+@keyframes hideBall {
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.flash-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: flash 1s 2s forwards; /* Show image after 2 seconds */
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+    .container {
+     /* text-align: center;*/
+     display:flex;
+      justify-content: flex-start; 
+      flex-wrap:wrap;
+      flex-direction:row;
+      font-size: 50px;
+     background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px;
+    }
+.container h1{
+ text-align: center;
+ color: #ffc107;
+ width:100%;
+ padding:4%;
+}
+    /* Slideshow */
+    .slideshow-container {
+      
+       display: inline-block;
+      width: 50%;
+      height: auto;
+      
+    }
+
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+
+    .mySlides img {
+      border-radius: 5px;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+    .typewriter{
+/* display:flex; */
+display:inline;
+width:40%;
+/* margin-top:5%; */
+text-align:center;
+margin:4%;
+
+
+
+/* justify-content: center; */
+    }
+.typewriter p{
+    font-family: monospace;
+    font-size:2.0rem;
+    margin-inline:auto;
+    overflow:hidden;
+    white-space:nowrap;
+    border:2px solid  #ff4507;
+    border-radius: 5px;
+    color:white;
+    text-shadow: 0px 5px 10px ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation:typing 3s steps(22)forwards,blink 1s step-end infinite;
+}
+
+@keyframes typing{
+    from{
+        width:0;
+      }
+    to{
+        width:100%;
+    }
+}
+/* @keyframes blink{
+    50%{
+        border-color:transparent;
+    } */
+
+
+    /* Content section layout */
+    .textcontent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+ .textcontent,.left-text h2 
+ .textcontent,.left-text h3 {
+  color:whitesmoke;
+  text-shadow: 0px 05px 10px;
+} 
+.textcontent,.right-text p {
+  /* color:white; */
+  text-shadow: 10px 15px 10px px rgb(3, 3, 27);
+}
+
+.homelogo {
+  /* flex: 1 1 300px */
+  display: flex;
+  justify-content:flex-end;
+  
+}
+
+.homelogo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.3;
+  align-items: center;
+} 
+/* Section Styling */
+#textcontent,.parent {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 60px 20px;
+  text-align: center;
+  width:100%;
+ border-radius: 10px;
+}
+
+.parent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ebe70e;
+}
+
+/* Highlights Container */
+.highlights {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Highlight Box */
+.highlights > div {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  flex: 0 1 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.highlights > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.highlights > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.highlights > div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.highlights i {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.highlights > div:hover i {
+  transform: scale(1.2) rotate(5deg);
+  color:#ff4507;
+}
+
+/* Text Styling */
+.highlights span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.highlights p {
+  font-size: 1.1rem;
+  color: #f4f2f9;
+  margin: 0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Media Queries */
+
+/* Tablets and smaller */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    padding: 10px;
+  }
+
+  .slideshow-container, .typewriter {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .typewriter p {
+    font-size: 1.4rem;
+    border-width: 1px;
+  }
+
+  .textcontent {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 15px;
+  }
+
+  .left-text, .right-text {
+    text-align: center;
+  }
+
+  .homelogo {
+    order: 2;
+    justify-content: center;
+  }
+
+  .homelogo img {
+    max-width: 80%;
+    opacity: 0.3;
+  }
+
+  .parent h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .highlights > div {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+  .container {
+    font-size: 28px;
+  }
+
+  .typewriter p {
+    font-size: 1.1rem;
+  }
+
+  .flash-image {
+    width: 80%;
+    height: auto;
+  }
+
+  .highlights > div {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  .highlights span {
+    font-size: 1.8rem;
+  }
+
+  .highlights p {
+    font-size: 1rem;
+  }
+
+  .parent {
+    padding: 30px 10px;
+  }
+
+  .homelogo img {
+    max-width: 100%;
+    opacity: 0.3;
+  }
+
+  .ball {
+    width: 30px;
+    height: 30px;
+}
+}
+  

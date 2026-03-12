@@ -1,0 +1,59 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Courses| SCOPE INDIA{% endblock   %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'myapp/courses1.css' %}">
+{% endblock %}
+{% block content %}
+  <main>
+    <section class="heading">
+    <h1>Courses at SCOPE INDIA</h1>
+    <h2>Center for Software, Networking, & Cloud Education</h2>
+    <h3>One of India's best training destinations with 18+ years of industry experience. Over 1,000 students placed annually.</h3>
+    </section>
+    <div class="course-header"><h2>Data Science, AI, & Data Analytics Courses</h2></div>
+    <section class="section1">
+      <a href="{% url 'course_detail' slug='data-science-ai' %}"><h3>Data Science & <abbr title="Artificial Intelligence">AI</abbr></h3></a>
+      <a href="{% url 'course_detail' slug='data-analytics' %}"><h3>Data Analytics</h3></a>
+      <a href="{% url 'course_detail' slug='microsoft-power-bi' %}"><h3>Microsoft Power <abbr title="Business Intelligence">BI</abbr></h3></a>
+    </section>
+
+    <div class="course-header"><h2>Software Courses</h2></div>
+    <section class="section1">
+      <a href="{% url 'course_detail' slug='java-full-stack' %}"><h3>Java Full Stack</h3></a>
+      <a href="{% url 'course_detail' slug='python-full-stack' %}"><h3>Python Full Stack</h3></a>
+      <a href="{% url 'course_detail' slug='php-full-stack' %}"><h3>PHP Full Stack</h3></a>
+      <a href="{% url 'course_detail' slug='dot-net-core-full-stack' %}"><h3>.NET Core Full Stack</h3></a>
+      <a href="{% url 'course_detail' slug='mern-stack' %}"><h3>MERN Stack</h3></a>
+      <a href="{% url 'course_detail' slug='mean-stack' %}"><h3>MEAN Stack</h3></a>
+      <a href="{% url 'course_detail' slug='flutter-app-development' %}"><h3>Flutter App Development</h3></a>
+      <a href="{% url 'course_detail' slug='website-designing' %}"><h3>Website Designing</h3></a>
+      <a href="{% url 'course_detail' slug='ui-ux-design' %}"><h3>UI/UX Design</h3></a>
+    </section>
+
+    <div class="course-header"><h2>Networking, Cloud, & DevOps Courses</h2></div>
+    <section class="section1">
+      <a href="{% url 'course_detail' slug='devops-engineer' %}"><h3>DevOps Engineer</h3></a> 
+      <a href="{% url 'course_detail' slug='ccna' %}"><h3>CCNA</h3></a> 
+      <a href="{% url 'course_detail' slug='aws-architect' %}"><h3>AWS Architect</h3></a>
+      <a href="{% url 'course_detail' slug='azure-administrator' %}"><h3>Azure Administrator</h3></a>
+      <a href="{% url 'course_detail' slug='rhcsa' %}"><h3>RHCSA</h3></a>
+      <a href="{% url 'course_detail' slug='rhce' %}"><h3>RHCE</h3></a>
+      <a href="{% url 'course_detail' slug='networking-cloud-admin' %}"><h3>Networking & Cloud Admin</h3></a>
+    </section>
+
+    <div class="course-header"><h2>Software Testing Courses</h2></div>
+    <section class="section1">
+      <a href="{% url 'course_detail' slug='istqb-manual-testing' %}"><h3>ISTQB Manual Testing</h3></a>
+      <a href="{% url 'course_detail' slug='advanced-testing' %}"><h3>Advanced Testing</h3></a>
+      <a href="{% url 'course_detail' slug='automation-testing' %}"><h3>Automation Testing</h3></a>
+    </section>
+
+      <div class="course-header"><h2>Other Courses</h2></div>
+    <section class="section1">
+      <a href="{% url 'course_detail' slug='digital-marketing' %}"><h3>Digital Marketing</h3></a>
+      <a href="{% url 'course_detail' slug='salesforce' %}"><h3>SalesForce</h3></a>
+    </section>
+  </main>
+
+{% endblock %} 

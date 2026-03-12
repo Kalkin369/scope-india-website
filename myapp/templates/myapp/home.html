@@ -1,0 +1,116 @@
+{% extends 'myapp/base.html' %}
+{% load static %}  
+{% block title %}Home | SCOPE INDIA{% endblock   %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'myapp/home.css' %}">
+{% endblock %}
+{% block content %}
+  <!-- Background section -->
+  <div class="background">
+    
+  <div class="ball left"></div>
+  <div class="ball right"></div>
+  <img src="{% static 'myapp/logo-2.png' %}" alt="Scope India Second Logo"  class="flash-image">
+
+  </div>
+
+  <!-- Main Heading -->
+  <section class="container">
+    <h1>Unlock Your IT Career With Us</h1>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      {% for img in images %}
+      <div class="mySlides fade">
+        <img src="{% static 'myapp/'|add:img %}" alt="">
+      
+      </div>
+      {% endfor %}
+     
+    </div>
+    <div class="typewriter">
+      <p>Transform  your  ideas  into  reality<br>we are here for your career path<br>Unlock Your IT Career  With Us
+        <br>We  assure  you ,....You..<br>...won't regret it for<br>after training from<br>SCOPE INDIA<br>.org
+      </p> 
+
+</div>
+  </section>
+
+  <!-- About Content -->
+  <section class="textcontent">
+    <div class="left-text">
+      <h2><strong>SCOPE INDIA</strong>, your career partner!</h2>
+      <h3>One of India's best training destinations for Software, Networking, and Cloud Computing courses with 17 years of industrial experience</h3>
+    </div>
+  
+    <div class="homelogo" >
+
+      <!-- <figure> -->
+        <img src="{% static 'myapp/SCOPE INDIA.jpeg' %}" alt="Scope India Office Image">
+      <!-- </figure> -->
+    </div>
+  
+    <div class="right-text">
+      <p><strong>SCOPE INDIA</strong> Software, Networking, and Cloud Professional Education Centre in Kerala and Tamil Nadu from Suffix E Solutions with a working professional-oriented on-the-job training model.
+        SCOPE INDIA provides courses for Software Programming in Python (Data Science | Artificial Intelligence | Machine Learning | Deep Learning, Data Analytics), Java, PHP, .NET, MERN,
+        Software Testing Manual and Automation, Cloud Computing (AWS | Azure), Server Administration (Microsoft MCSE, Linux RHCE), Networking (CCNA), DevOps, Mobile App Development in Flutter,
+        and Digital Marketing. A training model with a 100% trusted job-based internship. SCOPE INDIA has a strong placement cell that provides jobs to thousands of students annually.
+        We assure you, you won't regret it after training from SCOPE INDIA.</p>
+      
+    </div>
+  <!-- </section> -->
+  <!-- <section id="placement_Highlights"> -->
+    <div class="parent">
+      <div>
+        <h2>Placement Highlights</h2>
+        <div class="highlights">
+          <div>
+            <!-- <i class="fas fa-briefcase"></i>   -->
+            <span>100%</span>
+            <p>Placement Assistance</p>
+          </div>
+          <div>
+            <!-- <i class="fas fa-user-graduate"></i> -->
+            <span>1000+</span>
+            <p>Students Getting Placed Every Year</p>
+          </div>
+          <div>
+            <!-- <i class="fas fa-building"></i> -->
+            <span>500+</span>
+            <p>Partner Companies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Slideshow Script -->
+  <script>
+   
+    
+    var slideIndex = 0;
+function showSlides() {
+  let slides = document.getElementsByClassName("mySlides");
+  if (slides.length === 0) return; // Prevents the error
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000);
+}
+showSlides();
+
+
+
+
+    // Wait for 3 seconds, then show the blue flash
+    // setTimeout(() => {
+    //   document.getElementById('flash').classList.add('visible');
+    // }, 3000); // 3000 milliseconds = 3 seconds
+  
+
+  </script>
+{% endblock %}

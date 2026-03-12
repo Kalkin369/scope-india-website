@@ -1,0 +1,85 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Contact| SCOPE INDIA{% endblock   %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'myapp/contact.css' %}">
+{% endblock %}
+{% block content %}
+
+  <main>
+    <section id="container_page_intro">
+      <div>
+        <h1>SCOPE INDIA Locations & Contact Details</h1>
+        <h2>Center for Software, Networking, & Cloud Education</h2>
+        <h3>One of India's best training destinations with 18 years of industrial experience.</h3>
+      </div>
+    </section>
+
+    <section id="locations_head_container">
+      <div class="intro_box">
+        <h3>SCOPE INDIA is open 365 days a year</h3>
+        <h5>Call us now if you're looking for an IT job or skill upgrade!</h5>
+      </div>
+      <!-- Add dynamic or static location cards here -->
+      <div>
+        <h4>SCOPE INDIA Trivandrum, Kerala</h4>
+        <address>TC 25/1403/3, Athens Plaza, SS Kovil Road, Thampanoor, Trivandrum, Kerala 695001</address>
+        <a class="footer_links" href="tel:+919745936073">9745936073</a>
+        <a class="footer_links" href="mailto:info@scopeindia.org">info@scopeindia.org</a>
+        <a class="footer_links" href="https://g.page/r/CXbW6SZGeJPfEAE" target="_blank">Location Route Map</a>
+      </div>
+  
+      <div>
+        <h4>SCOPE INDIA Technopark, Kerala</h4>
+        <address>Phase 1, Main Gate, Diamond Arcade, Near Technopark, Trivandrum</address>
+        <a class="footer_links" href="tel:+919745936073">9745936073</a>
+        <a class="footer_links" href="mailto:technopark@scopeindia.org">technopark@scopeindia.org</a>
+        <a class="footer_links" href="https://maps.app.goo.gl/hbG8wSiDcW2w9kyH9" target="_blank">Location Route Map</a>
+      </div>
+  
+      <div>
+        <h4>SCOPE INDIA Kochi, Kerala</h4>
+        <address>Vasanth Nagar Rd, near JLN Metro Station, Kaloor, Kochi, Kerala 682025</address>
+        <a class="footer_links" href="tel:+917592939481">7592939481</a>
+        <a class="footer_links" href="mailto:kochi@scopeindia.org">kochi@scopeindia.org</a>
+        <a class="footer_links" href="https://g.page/r/CWv07KhFfP7dEAE" target="_blank">Location Route Map</a>
+      </div>
+  
+      <div>
+        <h4>SCOPE INDIA Nagercoil 1, Tamil Nadu</h4>
+        <address>Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001</address>
+        <a class="footer_links" href="tel:+918075536185">8075536185</a>
+        <a class="footer_links" href="mailto:ngl@scopeindia.org">ngl@scopeindia.org</a>
+        <a class="footer_links" href="https://goo.gl/maps/fVjnoN7GzcU1zson7" target="_blank">Location Route Map</a>
+      </div>
+  
+      <div>
+        <h4>SCOPE INDIA Nagercoil 2, Tamil Nadu</h4>
+        <address>Pharma Street, 5/2 Ward 28, Distillery Road, Putheri Nagercoil</address>
+        <a class="footer_links" href="tel:+918075536185">8075536185</a>
+        <a class="footer_links" href="mailto:ngl@scopeindia.org">ngl@scopeindia.org</a>
+        <a class="footer_links" href="https://goo.gl/maps/fVjnoN7GzcU1zson7" target="_blank">Location Route Map</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Form</h2>
+      <form class="animated-form" id="contactForm" method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Email</button>
+        {% if sent %}
+      <p style="color:green;">Your message was sent successfully!</p>
+      {% elif error %}
+      <p style="color:red;">Unable to send your message right now. Please try again later.</p>
+      {% endif %}
+      </form>
+      
+    </section>
+  </main>
+
+ {% endblock %}  

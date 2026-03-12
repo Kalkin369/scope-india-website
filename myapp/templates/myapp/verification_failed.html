@@ -1,0 +1,9 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+  <section style="text-align: center; padding: 40px;">
+    <h2>Verification Failed</h2>
+    <p>Invalid or expired verification link. Please contact support or try registering again.</p>
+    <a href="{% url 'register' %}" style="margin-top: 20px; display: inline-block; padding: 10px 20px; background-color: #dc3545; color: white; text-decoration: none; border-radius: 5px;">Register Again</a>
+  </section>
+{% endblock %}
